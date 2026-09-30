@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --font-bengali: "Noto Sans Bengali", system-ui, -apple-system, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --color-burgundy: #8F1537;
+  --color-burgundy-dark: #6E0E28;
+  --color-burgundy-light: #B4264E;
+  --color-burgundy-50: #FAF0F2;
+  --color-burgundy-100: #F4D9E0;
+
+  --color-charcoal: #24252A;
+  --color-surface: #FAF8F3;
+  --color-cream: #FAF8F3;
+
+  --color-brand-maroon: #8F1537;
+  --color-brand-maroon-dark: #6E0E28;
+  --color-brand-maroon-light: #B4264E;
+  --color-brand-maroon-subtle: #FAF0F2;
+  --color-brand-charcoal: #24252A;
+  --color-brand-cream: #FAF8F3;
+  --color-brand-card: #FFFFFF;
+  --color-brand-muted: #4B4C52;
+  --color-brand-border: #DCD6CB;
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-bengali);
+  background-color: #FAF8F3;
+  color: #24252A;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling offset for sticky navbar */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* English text utility */
+.font-english {
+  font-family: var(--font-sans);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8D2C6;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8F1537;
+}

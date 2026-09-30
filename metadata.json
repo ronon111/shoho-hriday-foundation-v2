@@ -1,0 +1,6 @@
+{
+  "name": "Shoho Riday Foundation",
+  "description": "সহৃদয় ফাউন্ডেশন (Shoho Riday Foundation) – মানুষের পাশে, মানবতার পথে। একটি বাংলাদেশী মানবিক ও সামাজিক কল্যাণ উদ্যোগ।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

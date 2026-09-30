@@ -1,0 +1,172 @@
+{
+  "entities": {
+    "Setting": {
+      "title": "Site Settings",
+      "description": "Global website configuration, brand info, and SEO metadata",
+      "type": "object",
+      "properties": {
+        "siteName": { "type": "string", "maxLength": 100 },
+        "englishName": { "type": "string", "maxLength": 100 },
+        "tagline": { "type": "string", "maxLength": 200 },
+        "primaryColor": { "type": "string", "maxLength": 30 },
+        "seoTitle": { "type": "string", "maxLength": 200 },
+        "seoDescription": { "type": "string", "maxLength": 500 },
+        "footerText": { "type": "string", "maxLength": 500 },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["siteName", "englishName", "tagline"]
+    },
+    "About": {
+      "title": "About Info",
+      "description": "Foundation about statement, mission, vision, and core values",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 150 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "mission": { "type": "string", "maxLength": 2000 },
+        "vision": { "type": "string", "maxLength": 2000 },
+        "values": { "type": "string", "maxLength": 2000 },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "description"]
+    },
+    "Contact": {
+      "title": "Contact Information",
+      "description": "Foundation contact numbers, emails, address, and social links",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "maxLength": 150 },
+        "phone1": { "type": "string", "maxLength": 50 },
+        "phone2": { "type": "string", "maxLength": 50 },
+        "address": { "type": "string", "maxLength": 300 },
+        "facebook": { "type": "string", "maxLength": 300 },
+        "instagram": { "type": "string", "maxLength": 300 },
+        "youtube": { "type": "string", "maxLength": 300 },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "phone1", "facebook", "instagram"]
+    },
+    "Activity": {
+      "title": "Activity Area",
+      "description": "Humanitarian activity categories and initiatives",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 100 },
+        "title": { "type": "string", "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "icon": { "type": "string", "maxLength": 100 },
+        "imageUrl": { "type": "string", "maxLength": 1000 },
+        "order": { "type": "number" },
+        "published": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "description", "published"]
+    },
+    "GalleryItem": {
+      "title": "Gallery Item",
+      "description": "Photo item with caption and category for the photo showcase",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 100 },
+        "imageUrl": { "type": "string", "maxLength": 1000 },
+        "title": { "type": "string", "maxLength": 200 },
+        "caption": { "type": "string", "maxLength": 1000 },
+        "category": { "type": "string", "maxLength": 100 },
+        "date": { "type": "string", "maxLength": 100 },
+        "published": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["imageUrl", "title", "published"]
+    },
+    "Initiative": {
+      "title": "Future Initiative",
+      "description": "Planned humanitarian initiative",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 100 },
+        "title": { "type": "string", "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "icon": { "type": "string", "maxLength": 100 },
+        "status": { "type": "string", "maxLength": 100 },
+        "order": { "type": "number" },
+        "published": { "type": "boolean" }
+      },
+      "required": ["title", "description", "status", "published"]
+    },
+    "Notice": {
+      "title": "Notice Item",
+      "description": "Public announcement and activity updates on Notice Board",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 100 },
+        "title": { "type": "string", "maxLength": 200 },
+        "description": { "type": "string", "maxLength": 2000 },
+        "date": { "type": "string", "maxLength": 100 },
+        "category": { "type": "string", "maxLength": 100 },
+        "published": { "type": "boolean" },
+        "order": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "description", "date", "published"]
+    },
+    "Submission": {
+      "title": "Public Submission",
+      "description": "Member, volunteer, support or contact form submission",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 200 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "email": { "type": "string", "maxLength": 150 },
+        "message": { "type": "string", "maxLength": 3000 },
+        "type": { "type": "string", "enum": ["member_application", "volunteer_application", "support_request", "contact"] },
+        "status": { "type": "string", "enum": ["new", "read", "replied", "closed"] },
+        "address": { "type": "string", "maxLength": 500 },
+        "location": { "type": "string", "maxLength": 200 },
+        "interest": { "type": "string", "maxLength": 200 },
+        "experience": { "type": "string", "maxLength": 1000 },
+        "organization": { "type": "string", "maxLength": 200 },
+        "supportType": { "type": "string", "maxLength": 200 },
+        "subject": { "type": "string", "maxLength": 200 },
+        "adminNote": { "type": "string", "maxLength": 3000 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "type", "status", "message"]
+    }
+  },
+  "firestore": {
+    "/settings/site": {
+      "schema": "Setting",
+      "description": "Global website settings and branding"
+    },
+    "/about/main": {
+      "schema": "About",
+      "description": "About the foundation"
+    },
+    "/contact/main": {
+      "schema": "Contact",
+      "description": "Contact info and social channels"
+    },
+    "/activities/{activityId}": {
+      "schema": "Activity",
+      "description": "Activity areas of the foundation"
+    },
+    "/gallery/{galleryId}": {
+      "schema": "GalleryItem",
+      "description": "Photo gallery items"
+    },
+    "/initiatives/{initiativeId}": {
+      "schema": "Initiative",
+      "description": "Planned future initiatives"
+    },
+    "/notices/{noticeId}": {
+      "schema": "Notice",
+      "description": "Official notice board announcements"
+    },
+    "/submissions/{submissionId}": {
+      "schema": "Submission",
+      "description": "Visitor contact and application submissions"
+    }
+  }
+}
